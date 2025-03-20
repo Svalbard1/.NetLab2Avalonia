@@ -1,0 +1,22 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:GeometryApp.Views;assembly=GeometryApp"
+        xmlns:vm="clr-namespace:GeometryApp.ViewModels"
+        x:Class="GeometryApp.Views.MainWindow"
+        x:DataType="vm:GeometryViewModel"
+        Title="Geometry App"
+        Width="1024" Height="768">
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="Auto"/>
+      <RowDefinition Height="*"/>
+    </Grid.RowDefinitions>
+    <StackPanel Orientation="Horizontal" Margin="10">
+      <Button Content="Добавить точку" Command="{Binding AddPointCommand}" Margin="5"/>
+      <Button Content="Добавить линию" Command="{Binding AddLineCommand}" Margin="5"/>
+      <Button Content="Добавить эллипс" Command="{Binding AddEllipseCommand}" Margin="5"/>
+      <Button Content="Добавить многоугольник" Command="{Binding AddPolygonCommand}" Margin="5"/>
+    </StackPanel>
+    <local:GeometryCanvas x:Name="CanvasView" Grid.Row="1"/>
+  </Grid>
+</Window>
